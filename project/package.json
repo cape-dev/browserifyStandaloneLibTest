@@ -1,0 +1,10 @@
+{
+  "name": "project",
+  "version": "0.0.1",
+  "dependencies": {
+    "testApp": "file:../brifyLib"
+  },
+  "scripts": {
+    "test": "node test.js"
+  }
+}
