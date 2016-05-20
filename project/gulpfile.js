@@ -19,10 +19,9 @@ var livereload = require('gulp-livereload');
 var partialify = require('partialify');
 var babelify = require('babelify');
 var aliasify = require('aliasify');
-var derequire = require('gulp-derequire');
 
 var customOpts = {
-  entries: ['./index.js'],
+  entries: ['./test.js'],
   debug: true,
   cache: {},
   packageCache: {},
@@ -35,13 +34,6 @@ gulp.task('default', function() {
     .transform(babelify)
     .transform(aliasify)
     .bundle()
-    .pipe(source('index.js'))
-    .pipe(derequire())
+    .pipe(source('main.js'))
     .pipe(gulp.dest(config.dist.root));
-});
-
-gulp.task('clean', function(cb) {
-
-  del([config.dist.root], cb);
-
 });
